@@ -79,7 +79,9 @@ let notes = [
 
 
 function setup(){
-	createCanvas(400, 400);
+	createCanvas(window.innerWidth, window.innerHeight);
+  
+  
 	textSize(width / 3);
 	textAlign(CENTER, CENTER);
     audioContext = getAudioContext();
@@ -149,6 +151,8 @@ function modelLoaded(){
 }
 
 function draw(){
+
+
   background(0);
   level = mic.getLevel();
   size = map(level,0,1,10,400);
