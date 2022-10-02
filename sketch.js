@@ -94,6 +94,8 @@ function setup(){
     
     mic.start(listening);
     
+    
+    
 }
 
 
@@ -101,6 +103,7 @@ function setup(){
 
 function listening(){
   console.log('listening');
+  audioContext.resume();
   
   
   pitch = ml5.pitchDetection(
@@ -109,7 +112,7 @@ function listening(){
      mic.stream,
      modelLoaded
     );
-    getAudioContext().resume();
+    
 }
 
 
