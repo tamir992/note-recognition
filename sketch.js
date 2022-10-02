@@ -94,9 +94,25 @@ function setup(){
     
 }
 
-function mouseClicked(){
+
+
+
+function listening(){
+  console.log('listening');
+  
+  
+  pitch = ml5.pitchDetection(
+     model_url,
+     audioContext,
+     mic.stream,
+     modelLoaded
+    );
     getAudioContext().resume();
-  if (recordCon == 0 ){
+}
+
+
+function mouseClicked(){
+    if (recordCon == 0 ){
     record.record(sound);
     recordLamp = 255;
     recordCon = 1;
@@ -112,24 +128,10 @@ function mouseClicked(){
         recordCon = 0;
       }
     }
-  }
+  }}
   
 
-}
 
-
-function listening(){
-  console.log('listening');
-  
-  
-  pitch = ml5.pitchDetection(
-     model_url,
-     audioContext,
-     mic.stream,
-     modelLoaded
-    );
-  
-}
 
 function gotPitch(error, frequency){
   if (error){
