@@ -79,7 +79,7 @@ let notes = [
 
 
 function setup(){
-	createCanvas(800, 1200);
+	createCanvas(window.innerWidth, window.innerHeight);
   
   
 	textSize(width / 3);
